@@ -1,11 +1,13 @@
-# Thomas of Acon – Chapel Ptolemais
+# Thomas of Acon – Chapel Lux ex Oriente (Piraeus)
+
+The Commemorative Order of St Thomas of Acon · Chapel *Lux ex Oriente*, Piraeus, Greece.
 
 Πρόγραμμα προϋπολογισμού Παρεκκλησίου (ΕΛ / FR / EN), βασισμένο στο `Chap_Athens_Budget_2026_Typ.xlsx`.
 Budget de Chapelle trilingue, basé sur le fichier Excel. · Trilingual chapel budget app built from the Excel workbook.
 
-**🌐 Live εφαρμογή / Application en ligne / Live app:** https://nglg-gsec.github.io/Thomas-of-Acon-chapel-Ptolemais/
+**🌐 Live εφαρμογή / Application en ligne / Live app:** https://webappngdsib.github.io/Thomas-of-Acon-chapel-Ptolemais/
 
-**Αρχείο / Fichier / File:** `Chap_Piraeus_Budget_021026_v1.html` (το `index.html` ανακατευθύνει εκεί)
+**Αρχείο / Fichier / File:** `Chap_Piraeus_Budget_021026_v1.html` (το `index.html` και το παλιό `Chap_Athens_Budget_021026_v1.html` ανακατευθύνουν εκεί)
 
 ## Ενότητες / Sections
 1. Εξοπλισμός / Inventaire / Inventory
