@@ -305,6 +305,7 @@ if (typeof module !== "undefined") module.exports = {defaults, compute};
 /* ===================== TRANSLATIONS ===================== */
 const T = {
  el:{
+  eb_inv:"Φύλλο Excel · Εξοπλισμός", eb_cons:"Φύλλο Excel · Καθαγιασμός", eb_y1:"Φύλλο Excel · Προϋπολογισμός 1ου έτους", eb_y2:"Φύλλο Excel · Προϋπολογισμός 2ου έτους",
   sub:"Παρεκκλήσιο {c} · Προϋπολογισμός ίδρυσης και λειτουργίας",
   excelMode:"Ακριβώς όπως το Excel",
   tabs:["Σύνοψη","Εξοπλισμός","Καθαγιασμός","Προϋπολογισμός {y1}","Προϋπολογισμός {y2}"],
@@ -344,6 +345,7 @@ const T = {
   flagTip:"Excel: {v}", flagCorr:"Διορθωμένο: {v}"
  },
  fr:{
+  eb_inv:"Feuille Excel · Inventaire", eb_cons:"Feuille Excel · Budget de consécration", eb_y1:"Feuille Excel · Budget 1re année", eb_y2:"Feuille Excel · Budget 2e année",
   sub:"Chapelle {c} · Budget de fondation et de fonctionnement",
   excelMode:"Identique à Excel",
   tabs:["Synthèse","Inventaire","Consécration","Budget {y1}","Budget {y2}"],
@@ -383,6 +385,7 @@ const T = {
   flagTip:"Excel : {v}", flagCorr:"Corrigé : {v}"
  },
  en:{
+  eb_inv:"Excel sheet · Inventory", eb_cons:"Excel sheet · Consecration budget", eb_y1:"Excel sheet · Year 1 budget", eb_y2:"Excel sheet · Year 2 budget",
   sub:"Chapel of {c} · Foundation and running budget",
   excelMode:"Match Excel exactly",
   tabs:["Overview","Inventory","Consecration","Budget {y1}","Budget {y2}"],
@@ -532,7 +535,7 @@ function vInventory(){
     </tr>`).join("");
   return `
   <section class="sheet">
-    <div class="sheet-head"><div><div class="eyebrow">Inventory</div><h2>${t("inv_title")}</h2><p class="lede">${t("inv_lede")}</p></div>
+    <div class="sheet-head"><div><div class="eyebrow">${t("eb_inv")}</div><h2>${t("inv_title")}</h2><p class="lede">${t("inv_lede")}</p></div>
       <button class="btn" type="button" id="bAdd">+ ${t("addRow")}</button></div>
     <div class="scroll"><table>
       <thead><tr><th>#</th><th>${t("c_item")}</th><th class="r">${t("c_qty")}</th><th class="r">${t("c_unit")}</th><th class="r">${t("c_bought")}</th><th class="r">${t("c_made")}</th><th>${t("c_by")}</th><th>${t("c_note")}</th><th></th></tr></thead>
@@ -563,7 +566,7 @@ function vConsecration(){
   const head = `<thead><tr><th>&nbsp;</th><th class="r">${t("c_cost")}</th><th>${t("c_cur")}</th><th class="r">${t("c_eur")}</th><th class="r">${t("c_n")}</th><th class="r">${t("c_total")}</th><th class="r">${t("c_per")}</th></tr></thead>`;
   return `
   <section class="sheet">
-    <div class="sheet-head"><div><div class="eyebrow">Consecration Budget</div><h2>${t("cons_title")} · ${esc(t("fee_chapel"))}</h2><p class="lede">${t("cons_lede")}</p></div>
+    <div class="sheet-head"><div><div class="eyebrow">${t("eb_cons")}</div><h2>${t("cons_title")} · ${esc(t("fee_chapel"))}</h2><p class="lede">${t("cons_lede")}</p></div>
       <div class="form" style="min-width:min(100%,320px)"><label>${t("pet")}${num("cons.pet")}</label><label>${t("gbp")}${num("settings.gbp")}</label></div></div>
     <div class="scroll"><table>
       ${head}
@@ -600,7 +603,7 @@ function vYear(k){
   const recItem = (f, isIncl) => `<dt>${esc(t("tr_"+f))}${f==="kit"?`<div class="note">${esc(t("tr_kit_n"))}</div>`:""}</dt><dd>${isIncl ? inclSel(`${k}.tariffs.rec.${f}`) : num(`${k}.tariffs.rec.${f}`)}</dd>`;
   return `
   <section class="sheet">
-    <div class="sheet-head"><div><div class="eyebrow">${k==="y1"?"Budget 1er Année":"Budget 2ème Année"}</div><h2>${t("y_title",{y:yr})}</h2><p class="lede">${t("y_lede",{y:yr})}</p></div></div>
+    <div class="sheet-head"><div><div class="eyebrow">${t(k==="y1"?"eb_y1":"eb_y2")}</div><h2>${t("y_title",{y:yr})}</h2><p class="lede">${t("y_lede",{y:yr})}</p></div></div>
     <div class="scroll"><table>
       <thead><tr><th>${t("rev")}</th><th class="r">${t("c_count")}</th><th>${t("c_who")}</th><th class="r">${t("c_rate")}</th><th class="r">${t("c_amt")}</th></tr></thead>
       <tbody>
