@@ -5,7 +5,7 @@ The Commemorative Order of St Thomas of Acon · Province of France · Chapel *Lu
 Πρόγραμμα προϋπολογισμού Παρεκκλησίου (ΕΛ / FR / EN), βασισμένο στο `Chap_Athens_Budget_2026_Typ.xlsx`.
 Budget de Chapelle trilingue, basé sur le fichier Excel. · Trilingual chapel budget app built from the Excel workbook.
 
-**🌐 Live εφαρμογή / Application en ligne / Live app:** https://webappngdsib.github.io/Thomas-of-Acon-chapel-Ptolemais/
+**🌐 Live εφαρμογή / Application en ligne / Live app:** https://webappngdsib.github.io/Thomas-of-Acon-Chapel-LUX-EX-ORIENTE/
 
 **Αρχείο / Fichier / File:** `Chap_Piraeus_Budget_021026_v1.html` · Αρχική σελίδα / Accueil / Home: `index.html` (το παλιό `Chap_Athens_Budget_021026_v1.html` ανακατευθύνει στον προϋπολογισμό)
 
