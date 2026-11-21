@@ -11,16 +11,16 @@
 <style>
 :root{
   --bg:#f2f4f8; --surface:#ffffff; --ink:#18223a; --muted:#5d6880; --line:#d5dbe6;
-  --navy:#1f3866; --bronze:#9a6a2c; --bronze-soft:#f3e7d6;
+  --navy:#1f3866; --bronze:#9a6a2c; --bronze-soft:#f3e7d6; --bad:#b0362c;
   --display:"Literata","Noto Serif",Georgia,serif;
   --body:"Noto Sans","Segoe UI",system-ui,-apple-system,sans-serif;
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
   --bg:#0e1524; --surface:#16203a; --ink:#e6ebf4; --muted:#9aa6bf; --line:#2b3a5c;
-  --navy:#3b5d9c; --bronze:#d9a362; --bronze-soft:#3a2d1c; color-scheme:dark }}
+  --navy:#3b5d9c; --bronze:#d9a362; --bronze-soft:#3a2d1c; --bad:#f08a7e; color-scheme:dark }}
 :root[data-theme="dark"]{
   --bg:#0e1524; --surface:#16203a; --ink:#e6ebf4; --muted:#9aa6bf; --line:#2b3a5c;
-  --navy:#3b5d9c; --bronze:#d9a362; --bronze-soft:#3a2d1c; color-scheme:dark }
+  --navy:#3b5d9c; --bronze:#d9a362; --bronze-soft:#3a2d1c; --bad:#f08a7e; color-scheme:dark }
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;margin:0}
 .wrap{max-width:880px;margin:0 auto;padding:40px 16px 60px}
@@ -38,6 +38,29 @@ h2{font-family:var(--display);font-weight:650;font-size:1.25rem;margin:32px 0 14
 .card h3{margin:0 0 6px;font-size:1.05rem}
 .card p{margin:2px 0;color:var(--muted);font-size:.9rem}
 .card .go{margin-top:10px;color:var(--bronze);font-weight:600;font-size:.88rem}
+.banner{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:28px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}
+.banner figure{margin:0}
+.banner figure a{display:block;cursor:zoom-in}
+.banner img{width:100%;height:auto;display:block}
+.banner figcaption{font-size:.8rem;color:var(--muted);margin-top:8px;text-align:center}
+.banner figcaption a{color:var(--bronze);cursor:pointer}
+.banner h3{margin:0 0 6px;font-size:1.05rem}
+.banner .lede{margin:0 0 14px;color:var(--muted);font-size:.9rem}
+.spec{width:100%;border-collapse:collapse;font-size:.86rem}
+.spec th,.spec td{text-align:left;vertical-align:top;padding:9px 8px;border-bottom:1px solid var(--line)}
+.spec th{width:34%;color:var(--bronze);font-weight:600}
+.general{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.general div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.general h4{margin:0 0 6px;font-size:.92rem}
+.general p{margin:0;font-size:.85rem;color:var(--muted)}
+.notes{font-size:.86rem;color:var(--muted);margin-top:14px}
+.notes p{margin:8px 0}
+.pending{color:var(--bad);font-weight:700}
+.outstanding{margin-top:16px;padding:16px 20px;border:2px solid var(--bad);border-radius:12px;background:var(--surface)}
+.outstanding h4{margin:0 0 8px;color:var(--bad);font-size:.95rem;letter-spacing:.03em}
+.outstanding ul{margin:0;padding-left:20px;font-size:.88rem}
+.outstanding li{margin:6px 0}
+@media (max-width:700px){.banner{grid-template-columns:1fr}.banner figure{max-width:300px;margin:0 auto}.general{grid-template-columns:1fr}.spec th{width:40%}}
 footer{margin-top:40px;text-align:center;color:var(--muted);font-size:.8rem}
 </style>
 </head>
@@ -71,6 +94,52 @@ footer{margin-top:40px;text-align:center;color:var(--muted);font-size:.8rem}
         <div class="go">Άνοιγμα · Ouvrir · Open →</div>
       </div>
     </a>
+
+    <h2 id="banner">Λάβαρο · Bannière · Banner</h2>
+    <section class="banner">
+      <figure>
+        <a href="assets/banner-lux-ex-oriente.png" target="_blank" rel="noopener"><img src="assets/banner-lux-ex-oriente.jpg" alt="Banner design: red velvet border with gold scallop shells and crosses around a white damask panel; inscription Commemorative Order of Saint Thomas of Acon, a red cross with a gold scallop shell, a rising gold sun over the Greek flag, and Chapel Lux ex Oriente, Athens Greece, Est. 2027; gold fringe and gold rod with fleur-de-lis finials" width="1024" height="1536" loading="lazy"></a>
+        <figcaption>Design reference · <a href="assets/banner-lux-ex-oriente.png" download>Download (PNG, 1024 × 1536)</a></figcaption>
+      </figure>
+      <div>
+        <h3>Chapel Lux ex Oriente — Banner</h3>
+        <p class="lede">Σχέδιο λάβαρου του Παρεκκλησίου και τεχνικές προδιαγραφές κατασκευής. Τα σημεία σε κόκκινο χρειάζονται επιβεβαίωση πριν την παραγωγή.<br>Banner design and manufacturing specification. Items in red must be confirmed before production.</p>
+        <table class="spec">
+          <tr><th>Shape</th><td>Vertical pennant with straight top and a pointed (V-shaped) lower edge, hung from a rod by three loops.</td></tr>
+          <tr><th>Dimensions</th><td><span class="pending">To be confirmed.</span> Proportions of the design are 2 : 3 (width : height).</td></tr>
+          <tr><th>Border</th><td>Deep-red velvet border on all sides, edged inside with gold braid. Alternating embroidered gold scallop shells and gold crosses (outlined crosses) evenly spaced around the border.</td></tr>
+          <tr><th>Centre panel</th><td>White damask (tone-on-tone floral pattern), framed by the gold braid.</td></tr>
+          <tr><th>Upper inscription</th><td>“COMMEMORATIVE ORDER OF / SAINT THOMAS OF ACON” — two lines, red serif capitals with gold edge.</td></tr>
+          <tr><th>Emblem</th><td>Red cross with gold edge and a raised gold scallop shell at its centre.</td></tr>
+          <tr><th>Lux ex Oriente device</th><td>Rising gold sun (half-disc with straight rays) on a gold horizon line; inside the half-disc, the Greek flag in blue and white.</td></tr>
+          <tr><th>Lower inscription</th><td>“CHAPEL / LUX EX ORIENTE / ATHENS GREECE / EST. 2027” — red serif capitals with gold edge, the last line smaller. <span class="pending">Place name and year to be confirmed (see below).</span></td></tr>
+          <tr><th>Fringe</th><td>Dense gold fringe along both lower (pointed) edges.</td></tr>
+          <tr><th>Hanging</th><td>Three red velvet hanging loops; gold rod with fleur-de-lis finials.</td></tr>
+          <tr><th>Reverse</th><td><span class="pending">Material and colour to be confirmed.</span></td></tr>
+        </table>
+      </div>
+    </section>
+
+    <div class="general">
+      <div><h4>Materials and decoration</h4><p>Velvet border. High-density machine embroidery in metallic gold thread with multicolour details (red, white, blue) to match the design. Reproduce all lettering, the cross, scallop shells, sun rays and flag exactly.</p></div>
+      <div><h4>Fringe and finishing</h4><p>Thick, dense, soft gold silk fringe with a natural drape; no plastic or rigid fringe. Reinforced seams, strong hanging loops and a neat professional finish.</p></div>
+      <div><h4>Reverse backing</h4><p>The entire reverse finished in satin, with no exposed unfinished seams. Colour to be confirmed.</p></div>
+    </div>
+
+    <div class="notes">
+      <p><b>Before production:</b> submit a scaled proof, verify the spelling and placement of all inscriptions, and provide fabric and thread-colour samples for approval. Itemise in the quotation the rod and finials, hanging hardware, packaging, shipping to Greece and delivery time.</p>
+      <p>Materials and finishing follow the same standard as the other banners of the Orders beyond the Craft in Greece.</p>
+    </div>
+
+    <div class="outstanding">
+      <h4>ΕΚΚΡΕΜΟΤΗΤΕΣ · OUTSTANDING ITEMS — CONFIRMATION REQUIRED</h4>
+      <ul>
+        <li><b>Place name:</b> the design reads “ATHENS GREECE”, while the draft By-laws give the seat as Piraeus (24 Konstantinoupoleos Street). Confirm Athens or Piraeus.</li>
+        <li><b>Year:</b> the design reads “EST. 2027”. Confirm against the consecration date.</li>
+        <li><b>Dimensions:</b> confirm finished width and height, and whether they include fringe, loops and rod.</li>
+        <li><b>Reverse:</b> confirm reverse material and colour.</li>
+      </ul>
+    </div>
   </main>
 
   <footer>Chapel Lux ex Oriente · Province of France · The Commemorative Order of St Thomas of Acon</footer>
